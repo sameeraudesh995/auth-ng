@@ -6,5 +6,16 @@ export const routes: Routes = [
   {
     path: '',
     component: WelcomePageComponent,
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./components/auth/auth.module')
+      .then(m => m.AuthModule),
+  },
+
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./components/dashboard/dashboard.module')
+      .then(m => m.DashboardModule),
   }
 ];
