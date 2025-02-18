@@ -1,0 +1,47 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.container .row{
+  width: 70%;
+  height: 70%;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: solid 1px ghostwhite;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.container .row .left-col{
+  background-image: url("/assets/signup.jpg") ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.right-col h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-form-field {
+  width: 90% !important;
+}
+
+.sign-in{
+  width: 90%;
+  background-color:ghostwhite !important;
+  color: black !important;
+  border-radius: 10px !important;
+}
+
+.sign-up{
+  width: 90%;
+  background-color: #00a6fb !important;
+  color: white !important;
+  border-radius: 10px !important;
+}

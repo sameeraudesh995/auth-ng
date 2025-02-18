@@ -1,0 +1,129 @@
+<!--<div class="container d-flex justify-content-center align-items-center w-100">-->
+<!--  <div class="row w-100">-->
+<!--    &lt;!&ndash; Left Column &ndash;&gt;-->
+<!--    <div class="col-sm p-2 left-col">-->
+<!--      &lt;!&ndash; Left column content (if any) &ndash;&gt;-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Right Column &ndash;&gt;-->
+<!--    <div class="col-sm d-flex justify-content-center right-col">-->
+<!--      <div class="text-center d-flex flex-column align-items-center" style="width: 100%">-->
+<!--        <h2 class="text-dark">Sign In</h2>-->
+<!--        <p class="text-dark">Please sign in first!</p>-->
+
+<!--        &lt;!&ndash; Sign-In Form &ndash;&gt;-->
+<!--        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="d-flex flex-column w-100 align-items-center">-->
+<!--          &lt;!&ndash; Email/Username Field &ndash;&gt;-->
+<!--          <mat-form-field appearance="outline" class="d-block w-100">-->
+<!--            <mat-label>Email/Username</mat-label>-->
+<!--            <input type="text" matInput formControlName="email">-->
+<!--          </mat-form-field>-->
+
+<!--          &lt;!&ndash; Password Field &ndash;&gt;-->
+<!--          <mat-form-field appearance="outline" class="d-block w-100">-->
+<!--            <mat-label>Password</mat-label>-->
+<!--            <input type="password" matInput formControlName="password">-->
+<!--          </mat-form-field>-->
+
+<!--          &lt;!&ndash; Sign-In Button &ndash;&gt;-->
+<!--          <button type="submit" mat-raised-button class="d-block sign-in mb-3 auth-button w-100">-->
+<!--            Sign-In-->
+<!--          </button>-->
+<!--        </form>-->
+
+<!--        &lt;!&ndash; Error Message &ndash;&gt;-->
+<!--        <div class="alert alert-danger d-flex align-items-center pa-2 w-100" *ngIf="errorMessage">-->
+<!--          <mat-icon>info</mat-icon>-->
+<!--          {{ errorMessage }}-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Progress Spinner &ndash;&gt;-->
+<!--        <div class="d-flex align-items-center w-100" *ngIf="isSubmissionInProgress">-->
+<!--          <mat-spinner [diameter]="22"></mat-spinner>-->
+<!--          <span class="ms-2">Signing-in...</span>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Sign-In with Google Button &ndash;&gt;-->
+<!--        <button mat-raised-button class="d-block sign-in w-100 mb-3">-->
+<!--          Sign-In with Google-->
+<!--        </button>-->
+
+<!--        &lt;!&ndash; Sign-Up Prompt &ndash;&gt;-->
+<!--        <p class="text-sm-center mt-1">-->
+<!--          You don't have an account?-->
+<!--        </p>-->
+
+<!--        &lt;!&ndash; Sign-Up Button &ndash;&gt;-->
+<!--        <button mat-raised-button [routerLink]="['/auth/sign-up']" class="d-block sign-up w-100" color="primary">-->
+<!--          Sign-Up-->
+<!--        </button>-->
+
+<!--        &lt;!&ndash; Forgot Password Link &ndash;&gt;-->
+<!--        <a [routerLink]="['/auth/forgot-password']" class="d-block mt-2 w-100">-->
+<!--          Forgot Password-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container d-flex justify-content-center align-items-center w-100">
+  <div class="row">
+    <div class="col-sm p-2 left-col">
+
+    </div>
+    <div class="col-sm d-flex justify-content-center right-col">
+      <div class="text-center d-flex flex-column  align-items-center" style="width: 100%" >
+        <h2 class="text-dark">Sign In</h2>
+        <p class="text-dark">please sign in first!</p>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="d-flex flex-column w-100 align-items-center">
+          <mat-form-field appearance="outline" class="d-block" >
+            <mat-label>Email/Username</mat-label>
+            <input type="text" matInput formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="d-block" >
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+          </mat-form-field>
+          <!--        error message-->
+
+          <div class="alert alert-danger d-flex align-items-center pa-2 w-90" *ngIf="errorMessage">
+            <mat-icon>
+              info
+            </mat-icon>
+            {{errorMessage}}
+          </div>
+
+          <!--        progress spinner-->
+          <div class="d-flex align-items-center" *ngIf="isSubmissionInProgress">
+            <mat-spinner  [diameter]="22">
+            </mat-spinner>
+            Signing-in...
+
+          </div>
+          <button type="submit" mat-raised-button class="d-block sign-in mb-3 auth-button">
+            Sign-In
+          </button>
+        </form>
+
+        <button mat-raised-button class="d-block sign-in" (click)="onSignInWithGoogle()">
+          Sign-In with Google
+        </button>
+
+        <p class="text-sm-center mt-1">
+          You don't have an account?
+        </p>
+
+        <button mat-raised-button [routerLink]="['/auth/sign-up']" class="d-block sign-up" color="primary">
+          Sign-Up
+        </button>
+
+        <a [routerLink]="['/auth/forgot-password']" class="d-block mt-2">
+          Forgot Password
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
