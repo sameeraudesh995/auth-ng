@@ -8,20 +8,38 @@
         <h2 class="text-dark">Sign Up</h2>
         <p class="text-dark">please sign Up first!</p>
 
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="d-flex flex-column w-100 align-items-center">
         <mat-form-field appearance="outline" class="d-block">
           <mat-label>Email/Username</mat-label>
-          <input type="text" matInput>
+          <input matInput formControlName="email">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="d-block">
           <mat-label>Password</mat-label>
-          <input type="password" matInput>
+          <input type="password" matInput formControlName="password">
         </mat-form-field>
 
-        <button mat-raised-button class="d-block sign-in mb-3 ">
+          <!--        error message-->
+
+          <div class="alert alert-danger d-flex align-items-center pa-2 w-90 " *ngIf="errorMessage">
+            <mat-icon>
+              info
+            </mat-icon>
+            {{errorMessage}}
+          </div>
+
+          <!--        progress spinner-->
+          <div class="d-flex align-items-center" *ngIf="isSubmissionInProgress">
+            <mat-spinner  [diameter]="22">
+            </mat-spinner>
+            Signing-up...
+
+          </div>
+        <button type="submit" mat-raised-button class="d-block sign-in mb-3 ">
           Sign-Up
         </button>
-        <button mat-raised-button class="d-block sign-in">
+        </form>
+        <button mat-raised-button class="d-block sign-in" (click)="onSignInWithGoogle()">
           Sign-Up with Google
         </button>
 

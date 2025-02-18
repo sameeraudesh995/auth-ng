@@ -12,8 +12,8 @@
   </button>
 </mat-toolbar>
 <h4 >
-  Welcome User!
+  Welcome, {{user.displayName}}!
 </h4>
-<button mat-raised-button style="color: black; border-radius: 5px" class="mt-0">
+<button mat-raised-button style="color: black; border-radius: 5px" class="mt-0" (click)="onSignOut()">
   Sign-out
 </button>
