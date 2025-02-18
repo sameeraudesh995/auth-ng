@@ -1,10 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {TodosService} from '../../../services/todos.service';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })

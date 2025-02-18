@@ -11,7 +11,12 @@
   </thead>
 
   <tbody>
-
+    <tr *ngFor="let tempData of todos">
+      <td>{{tempData?.userId}}</td>
+      <td>{{tempData?.id}}</td>
+      <td>{{tempData?.title}}</td>
+      <td>{{tempData?.completed? 'Completed':'Pending'}}</td>
+    </tr>
   </tbody>
 </table>
 
