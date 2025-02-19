@@ -1,9 +1,12 @@
-import { Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatToolbar} from '@angular/material/toolbar';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {Auth, signOut, User} from '@angular/fire/auth';
+import {TodosComponent} from '../todos/todos.component';
+import {NgForOf} from '@angular/common';
+import {TodosService} from '../../../services/todos.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +15,15 @@ import {Auth, signOut, User} from '@angular/fire/auth';
     MatIcon,
     MatIconButton,
     MatToolbar,
-    MatButton
+    MatButton,
+    TodosComponent,
+    RouterOutlet,
+    NgForOf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent  {
  private activatedRoute = inject(ActivatedRoute);
  private route = inject(Router);
 
@@ -26,6 +32,7 @@ export class HomeComponent {
 
   //get the auth service
   auth = inject(Auth);
+
 
   constructor() {
     console.log('Logged in user: ', this.user);
@@ -38,4 +45,5 @@ export class HomeComponent {
       console.log('error occurred :', error);
     })
   }
+
 }

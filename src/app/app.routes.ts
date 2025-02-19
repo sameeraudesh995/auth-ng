@@ -3,6 +3,7 @@ import {WelcomePageComponent} from './components/welcome-page/welcome-page.compo
 import {AuthGuard, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import {NgModule} from '@angular/core';
 import {UserResolver} from './services/user.resolver';
+import {LoadJobsComponent} from './components/dashboard/load-jobs/load-jobs.component';
 
 
 const redirectToLogin = ()=> redirectUnauthorizedTo('/auth/sign-in');
@@ -35,7 +36,8 @@ export const routes: Routes = [
     resolve: {
       user: UserResolver,
     }
-  }
+  },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
