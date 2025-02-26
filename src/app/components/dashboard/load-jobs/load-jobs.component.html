@@ -1,0 +1,87 @@
+<!--<div *ngFor="let tempJob of job" class="job-detail">-->
+<!--  <h2>{{ tempJob?.title}}</h2>-->
+<!--  <p><strong>Company:</strong> {{ tempJob?.company }}</p>-->
+<!--  <p><strong>Location:</strong> {{ tempJob?.location }}</p>-->
+<!--  <p><strong>Salary Range:</strong> ${{ tempJob?.salary_from }} - ${{ tempJob?.salary_to }}</p>-->
+<!--  <p><strong>Employment Type:</strong> {{ tempJob?.employment_type }}</p>-->
+<!--  <p><strong>Application Deadline:</strong> {{ tempJob?.application_deadline }}</p>-->
+<!--  <p><strong>Qualifications:</strong></p>-->
+<!--  <ul>-->
+<!--    <li *ngFor="let qualification of tempJob?.qualifications">{{ qualification }}</li>-->
+<!--  </ul>-->
+<!--  <p><strong>Contact:</strong> {{ tempJob?.contact }}</p>-->
+<!--  <p><strong>Job Category:</strong> {{ tempJob?.job_category }}</p>-->
+<!--  <p><strong>Remote Work:</strong> {{ tempJob?.is_remote_work ? 'Yes' : 'No' }}</p>-->
+<!--  <p><strong>Number of Openings:</strong> {{ tempJob?.number_of_opening }}</p>-->
+<!--  <p><strong>Posted On:</strong> {{ tempJob?.created_at }}</p>-->
+<!--  <p><strong>Last Updated:</strong> {{ tempJob?.updated_at }}</p>-->
+<!--</div>-->
+<!--<div *ngIf="!job">-->
+<!--  <p>Loading job details...</p>-->
+<!--</div>-->
+
+<div *ngFor="let tempJob of job" class="job-detail-container">
+  <div class="job-header">
+    <h2 class="job-title">{{ tempJob?.title }}</h2>
+    <p class="job-company"><i class="fas fa-building"></i> {{ tempJob?.company }}</p>
+    <p class="job-location"><i class="fas fa-map-marker-alt"></i> {{ tempJob?.location }}</p>
+  </div>
+
+  <div class="job-info">
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-money-bill-wave"></i> Salary Range:</p>
+      <p class="info-value">${{ tempJob?.salary_from }} - ${{ tempJob?.salary_to }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-briefcase"></i> Employment Type:</p>
+      <p class="info-value">{{ tempJob?.employment_type }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-calendar-times"></i> Application Deadline:</p>
+      <p class="info-value">{{ tempJob?.application_deadline }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-graduation-cap"></i> Qualifications:</p>
+      <ul class="qualifications-list">
+        <li *ngFor="let qualification of tempJob?.qualifications">{{ qualification }}</li>
+      </ul>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-envelope"></i> Contact:</p>
+      <p class="info-value">{{ tempJob?.contact }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-tags"></i> Job Category:</p>
+      <p class="info-value">{{ tempJob?.job_category }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-home"></i> Remote Work:</p>
+      <p class="info-value">{{ tempJob?.is_remote_work ? 'Yes' : 'No' }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-users"></i> Number of Openings:</p>
+      <p class="info-value">{{ tempJob?.number_of_opening }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-calendar-alt"></i> Posted On:</p>
+      <p class="info-value">{{ tempJob?.created_at }}</p>
+    </div>
+
+    <div class="info-section">
+      <p class="info-label"><i class="fas fa-sync-alt"></i> Last Updated:</p>
+      <p class="info-value">{{ tempJob?.updated_at }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!job" class="loading-message">
+  <p><i class="fas fa-spinner fa-spin"></i> Loading job details...</p>
+</div>

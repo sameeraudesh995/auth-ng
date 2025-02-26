@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #333333;
+  color: #ffff;
+}
+
+.job-detail-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.job-header {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.job-title {
+  color: #007bff;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.job-company, .job-location {
+  font-size: 18px;
+  color: gainsboro;
+  margin: 5px 0;
+}
+
+.job-company i, .job-location i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.info-section {
+  margin-bottom: 15px;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.info-label i {
+  margin-right: 10px;
+}
+
+.info-value {
+  color: #555;
+  margin-left: 25px;
+}
+
+.qualifications-list {
+  list-style-type: disc;
+  margin-left: 40px;
+  color: #555;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.loading-message i {
+  margin-right: 10px;
+}
